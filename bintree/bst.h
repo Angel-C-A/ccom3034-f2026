@@ -34,6 +34,11 @@ template<class Node, class T>
     return addChild(p, u);
   }
 
+  bool add(Node *u) {
+    Node *p = findLast(u->value);
+    return addChild(p,u);
+  }
+
   Node *findLast(T x) {
     Node *w = root, *prev = nullptr;
     while (nullptr != w) {
