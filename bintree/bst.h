@@ -134,6 +134,10 @@ template<class Node, class T>
       root->parent = nullptr;
     }
   }
+
+  void rotateRight(Node *u) {
+    // lo mismo, pero alrevez
+  }
 };
 
 template<class T>
