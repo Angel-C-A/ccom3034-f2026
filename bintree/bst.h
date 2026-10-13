@@ -111,6 +111,29 @@ template<class Node, class T>
       delete w;
     }
   }
+
+  void rotateLeft(Node *w) {
+    Node *u = w->right;
+    u->parent = w->parent;
+    if (u->parent != nullptr) {	// u es la raiz?
+      if (u->parent->left == w) {
+	// no se maybe
+	u->parent->left = u;
+      } else {
+	u->parent->right = u;
+      }
+    }
+    w->right = u->left; 	// mover B
+    u->left = w;
+    if (w->right != nullptr) {	// B es nullptr
+      w->right->parent = w;
+    }
+    w->parent = u;
+    if (w == root) {
+      root = u;
+      root->parent = nullptr;
+    }
+  }
 };
 
 template<class T>
