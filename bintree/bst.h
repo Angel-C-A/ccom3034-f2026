@@ -5,6 +5,9 @@
 // Released under
 // https://creativecommons.org/licenses/by/2.5/ca/
 
+#ifndef BST_H
+#define BST_H
+
 #include "bintree.h"
 
 template<class T>
@@ -137,9 +140,39 @@ template<class Node, class T>
 
   void rotateRight(Node *u) {
     // lo mismo, pero alrevez
+    Node *w = u->left;
+    w->parent = u->parent;
+    if (w->parent != nullptr) { // w no es nueva raiz
+      if (w->parent->left == u) {
+	w->parent->left = w;
+      } else {
+	w->parent->right = w;
+      }
+    }
+    u->left = w->right;
+    w->right = u;
+    if (u->left != nullptr) {
+      u->left->parent = u;
+    }
+    u->parent = w;
+    if (u == root) {
+      root = w;
+      root->parent = nullptr;
+    }
   }
+
+  int height() {
+    return height(root);
+  }
+
+  int height(Node *u) {
+    if (u == nullptr) return 0;
+    return 1 + std::max(height(u->left), height(u->right));
+  }
+  
 };
 
 template<class T>
 class BSTNode1 : public BSTNode<BSTNode1<T>, T> {};
 
+#endif
