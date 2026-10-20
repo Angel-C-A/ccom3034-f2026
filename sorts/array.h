@@ -84,21 +84,12 @@ void array<T>::reverse() {
 	}
 }
 
-  //  This original copyOfRange() was corrupting arrays in mergeSort
-// template<class T>
-// void array<T>::copyOfRange(array<T> &a0, array<T> &a, int i, int j) {
-// 	array<T> b(j-i);
-// 	std::copy(a.a+i, a.a+j-i, a0.a);
-// 	a0 = b;
-// }
-
-  // Slower, working copyOfRange by Humberto Ortiz-Zuazaga
-  // Needs a0 to have allocated space for the array
 template<class T>
 void array<T>::copyOfRange(array<T> &a0, array<T> &a, int i, int j) {
-  for (int place = i; place < j; place++) {
-    a0.a[place-i] = a.a[place];
-  }
+	array<T> b(j-i);
+	// copy elements from a.a[i] to a.a[j] into b.a
+	std::copy(a.a+i, a.a+j, b.a); 
+	a0 = b;
 }
 
 template<class T>

@@ -44,11 +44,9 @@ void merge(array<T> &a0, array<T> &a1, array<T> &a) {
 template<class T>
 void mergeSort(array<T> &a) {
 	if (a.length <= 1) return;
-	array<T> a0(a.length/2);
-	// my copyOfRange needs a0 to be allocated
+	array<T> a0(0);
 	array<T>::copyOfRange(a0, a, 0, a.length/2);
-	array<T> a1(a.length - a.length/2);
-	// my copyOfRange needs a1 to be allocated
+	array<T> a1(0);
 	array<T>::copyOfRange(a1, a, a.length/2, a.length);
 
 	mergeSort(a0);
