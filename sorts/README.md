@@ -1,10 +1,10 @@
 # Ejemplos de mergeSort y quickSort
 
-Codigo del libro para mergeSort y quickSort, y un `main.cpp` para
-probarlos.
+Código del libro para `mergeSort()` y `quickSort()` (en
+`Algorithms.h`), y un `main.cpp` para probarlos.
 
-El archivo `array.h` fue modificado para corregir un error de corrupcion
-de memoria en los arreglos de mergeSort.
+El archivo `array.h` fue modificado para corregir un error de
+corrupción de memoria en los arreglos de mergeSort.
 
 ## Para compilar
 
