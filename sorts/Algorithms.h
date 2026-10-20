@@ -5,8 +5,11 @@
  *      Author: morin
  */
 
-// Adapted for CCOM3034 by Humberto Ortiz Zuazaga
-// 2026-10-20
+// Copyright 2026 Humberto Ortiz Zuazaga
+// Based on Algorithms.h Copyright 2011 by Pat Morin
+// in https://opendatastructures.org/
+// Released under
+// https://creativecommons.org/licenses/by/2.5/ca/
 
 #ifndef ALGORITHMS_H_
 #define ALGORITHMS_H_
