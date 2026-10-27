@@ -5,6 +5,7 @@
 // Released under
 // https://creativecommons.org/licenses/by/2.5/ca/
 
+#include "BinaryHeap.h"
 #include "Algorithms.h"
 #include "array.h"
 
@@ -29,6 +30,9 @@ int main() {
   array<int> b(10);		// copia de los elementos desordenados
   array<int>::copyOfRange(b, numbers, 0, 10);
   
+  array<int> c(10);		// copia de los elementos desordenados
+  array<int>::copyOfRange(c, numbers, 0, 10);
+
   std::cout << "Antes de mergeSort:" << std::endl;
   print(numbers);
     mergeSort(numbers);
@@ -40,6 +44,12 @@ int main() {
   quickSort(b);
   std::cout << "Luego de quickSort:" << std::endl;
   print(b);
+
+  std::cout << "Antes de heapSort:" << std::endl;
+  print(c);
+  heapSort(c);
+  std::cout << "Luego de heapSort:" << std::endl;
+  print(c);
 
   return 0;
 }
