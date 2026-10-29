@@ -87,12 +87,12 @@ You should also make sure the resulting arrays are sorted.
 Run the `sorting` program with varying input sizes, and record the
 times in the following table:
 
-| # elements | bubble sort | sort | mergeSort | quickSort | heapSort |
-|------------|-------------|------|-----------|-----------|----------|
-| 4,000      |             |      |           |           |          |
-| 8,000      |             |      |           |           |          |
-| 16,000     |             |      |           |           |          |
-| 32,000     |             |      |           |           |          |
+| # elements | bubble sort | std::sort | mergeSort | quickSort | heapSort |
+|------------|-------------|-----------|-----------|-----------|----------|
+| 4,000      |             |           |           |           |          |
+| 8,000      |             |           |           |           |          |
+| 16,000     |             |           |           |           |          |
+| 32,000     |             |           |           |           |          |
 
 Which sort is fastest? slowest?
 
@@ -101,12 +101,12 @@ Which sort is fastest? slowest?
 Run the `sorting` program again, and record the new times in the table
 below:
 
-| # elements | bubble sort | sort | mergeSort | quickSort | heapSort |
-|------------|-------------|------|-----------|-----------|----------|
-| 4,000      |             |      |           |           |          |
-| 8,000      |             |      |           |           |          |
-| 16,000     |             |      |           |           |          |
-| 32,000     |             |      |           |           |          |
+| # elements | bubble sort | std::sort | mergeSort | quickSort | heapSort |
+|------------|-------------|-----------|-----------|-----------|----------|
+| 4,000      |             |           |           |           |          |
+| 8,000      |             |           |           |           |          |
+| 16,000     |             |           |           |           |          |
+| 32,000     |             |           |           |           |          |
 
 Plot each of the sorts in a separate series. Are there clear winners
 or losers?
