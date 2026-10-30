@@ -80,6 +80,11 @@ void quickSort(array<T> &a, int i, int n) {
 	quickSort(a, q, n-(q-i));
 }
 
+template<class T>
+void heapSort(array<T> &a) {
+        BinaryHeap<T>::sort(a);
+}
+
 } /* namespace ods */
 
 #endif /* ALGORITHMS_H_ */
