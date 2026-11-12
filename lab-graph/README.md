@@ -1,9 +1,37 @@
 # Graph algorithms
 
 In class we discussed the breadth-first and depth-first tecniques to
-search graphs. This repository implements both, and uses one to test if
-a path can be found in a graph from a source vertex to a target
-vertex.
+search graphs. This repository implements both (in the file
+`graph-algorithms.h`), and uses one to test if a path can be found in
+a graph from a source vertex to a target vertex.
+
+## Compiling
+
+### Using cmake
+
+```
+$ cmake -B build .
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/humberto/Sync/Documents/class/2026/ccom3034/ccom3034-f2026/lab-graph/build
+$ cmake --build build
+[ 16%] Building CXX object CMakeFiles/main.dir/main.cpp.o
+[ 33%] Building CXX object CMakeFiles/main.dir/AdjacencyLists.cpp.o
+[ 50%] Linking CXX executable main
+[ 50%] Built target main
+[ 66%] Building CXX object CMakeFiles/shortest.dir/shortest.cpp.o
+[ 83%] Building CXX object CMakeFiles/shortest.dir/AdjacencyLists.cpp.o
+[100%] Linking CXX executable shortest
+[100%] Built target shortest
+```
+
+### By hand
 
 ```
 $ g++ -o main --std=c++20 main.cpp AdjacencyLists.cpp 
@@ -34,8 +62,26 @@ modified breadth-first search using an auxiliary array `p` (see
 section 12.3.1). Write a function to print the shortest path in a
 given graph `g` from a source vertex `r` to a target vertex `t`.
 
+> A particularly useful application of the breadth-first-search algorithm
+> is, therefore, in computing shortest paths. To compute the shortest path
+> from r to every other vertex, we use a variant of bfs(g, r) that uses an
+> auxilliary array, p, of length n. When a new vertex j is added to q, we set
+> p[j] = i. In this way, p[j] becomes the second last node on a shortest path
+> from r to j. Repeating this, by taking p[p[j], p[p[p[j]]], and so on we can
+> reconstruct the (reversal of) a shortest path from r to j.
+
 ```
 template<class Graph>
-bool print_path(Graph &g, int r, int t);
+bool shortestPath(Graph &g, int r, int t);
 ```
 
+The file `shortest.cpp` has a skeleton implementation of
+`shortestPath`. Fix it so that it works.
+
+```
+$ g++ -g -o shortest shortest.cpp AdjacencyLists.cpp 
+$ ./shortest small.csv 1 8
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  No se encontrar caminos
+Aborted (core dumped)
+```
